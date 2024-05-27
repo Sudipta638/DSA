@@ -100,7 +100,7 @@ int rob(vector<int> &nums)
 
 int main()
 {
-    vector<int> nums = {1, 2, 3, 1};
+    vector<int> nums = {-3,-2,9};
     int maxAmount = rob(nums);
     cout << "Maximum amount of money you can rob tonight: " << maxAmount << endl;
     return 0;

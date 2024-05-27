@@ -89,6 +89,11 @@ findLaddersfromExtansionofSetpsLadder(string beginWord, string endWord,
         auto it = q.front();
         vector<string> wordList = it;
         string startword = it.back();
+        if (wordList.size() > level)
+        {
+            level++;
+            st.erase(startword);
+        }
         q.pop();
         for (int i = 0; i < startword.length(); i++)
         {
@@ -100,11 +105,7 @@ findLaddersfromExtansionofSetpsLadder(string beginWord, string endWord,
                     startword[i] = ch;
                     if (st.find(startword) != st.end())
                     {
-                        if (wordList.size() > level)
-                        {
-                            level++;
-                            st.erase(startword);
-                        }
+
                         wordList.push_back(startword);
 
                         if (startword == endWord)
